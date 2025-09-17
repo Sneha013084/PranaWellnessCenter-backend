@@ -1,7 +1,7 @@
 
 //he protect middleware ensures that only authenticated users can access certain routes
 const jwt = require("jsonwebtoken");
-const User = require("../models/User");
+const User = require("../Models/User");
 
 //Middleware function that checks if a user is authenticated using JWT, securing the private routes.
     //middleware sits between request and controller
@@ -13,7 +13,7 @@ const protect = async (req, res, next) =>{
     
     let token;   
 
-    if(req.headers.authorization?.startsawith ("Bearer")) {
+    if(req.headers.authorization?.startswith ("Bearer")) {
     try {
         token = req.headers.authorization.split(" ")[1];
         const decoded = jwt.verify(token, process.env.JWT_SECRECT);
