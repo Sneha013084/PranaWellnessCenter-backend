@@ -1,7 +1,7 @@
 
 const express = require("express");
 const router = express.Router();
-const createContact = require("../Controllers/contactFormController");
+const createContact = require("../Controllers/ContactFormController");
 const protect = require ("../middleware/authMiddleware");
 
 //public route
