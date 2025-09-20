@@ -8,6 +8,8 @@ const Booking = require("../Models/Booking");
 //create a booking
 
 const createBooking = async(req ,res)=>{
+      console.log("Request body:", req.body);
+  console.log("Logged-in user:", req.user);
 
     const { service, date,time} = req.body;
 

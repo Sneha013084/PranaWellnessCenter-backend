@@ -15,10 +15,21 @@ const protect = async (req, res, next) =>{
 
     if(req.headers.authorization?.startsWith ("Bearer")) {
     try {
+        // get token from header
+
         token = req.headers.authorization.split(" ")[1];
+
+      // verify token
+
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+        //get user from token
+
    const userId = decoded.id || decoded.user?._id;
       req.user = await User.findById(userId).select("-password");
+
+       next();
+
     }catch(error){
         res.status(401).json({message : "Not authorized, token failed"});
     }
@@ -27,5 +38,6 @@ const protect = async (req, res, next) =>{
         res.status(401).json({message : "Not authorized, no token"});
     }
 };
+
 module.exports = protect;
 
