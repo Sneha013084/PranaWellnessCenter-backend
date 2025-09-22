@@ -17,9 +17,9 @@ const createBooking = async(req ,res)=>{
         const booking = await Booking.create({
             user:req.user._id ,    // comes from jwt middleware
             service,
-            date:new Data (date),
+            date:new Date (date),
             time,
-            status:"pending"
+            status:"Pending"
         });
         res.status(201).json (booking)
     }catch(error){
