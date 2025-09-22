@@ -33,7 +33,7 @@ Testing: Postman
 
 Clone the repository:
 
-git clone https://github.com/yourusername/backend.git
+git clone https://github.com/Sneha013084/PranaWellnessCenter-backend
 
 
 ## Navigate to the backend folder:
