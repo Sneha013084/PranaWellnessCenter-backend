@@ -20,14 +20,10 @@ const userSchema = new mongoose.Schema({
     },
     
     phone:{ 
-        type:String,
-    },
+        type:String}
+    }, {timestamps});
 
-    createdAt:{
-        type:Date,
-        default:Date.now,
-    }
-});
+    
 // for authentication and authgorization purpose - hash password before saving by using
 // pre(save) mongoose middleware, runs before the document saved to the database, when the password is modified
 //or updated every time - hashing occurs,
