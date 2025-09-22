@@ -21,7 +21,11 @@ const userSchema = new mongoose.Schema({
     
     phone:{ 
         type:String}
-    }, {timestamps});
+    }, 
+    
+    {timestamps:true}
+
+);
 
     
 // for authentication and authgorization purpose - hash password before saving by using
