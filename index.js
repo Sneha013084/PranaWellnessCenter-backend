@@ -22,7 +22,9 @@ app.use("/api/users", require ("./Routes/userRoutes"));
 app.use("/api/bookings", require("./Routes/bookingRoutes")) ;
 app.use("/api/contact", require("./Routes/contactRoutes"));
 
-// server
+
+
+
 app.get("/", (req, res) => {
   res.send("Backend is running!");
 });

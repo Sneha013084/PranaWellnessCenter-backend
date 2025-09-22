@@ -9,8 +9,19 @@ const generateToken = require("../utils/generateToken");
 //1. For registering a new user
 
 const registerUser = async(req ,res)=>{
+      // Ensure req.body exists
+  if (!req.body) {
+    return res.status(400).json({ message: "Request body is missing" });
+  }
+  
 
     const{ name, email, password, phone} = req.body; // request body contains these info
+
+    // Ensure all fields are provided
+  if (!name || !email || !password || !phone) {
+    return res.status(400).json({ message: "All fields are required" });
+  }
+
 
     // check for is user already exist
 
