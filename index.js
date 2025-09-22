@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 
 // Serve Vite frontend build
 const frontendPath = path.join(__dirname, "../frontend/dist");
-app.use(express.static(frontendPath));
+app.use(express.static(frontendPath, { index:false }));
 
 // Handle all other routes → send index.html for frontend routing
 app.get(/.*/, (req, res) => {
